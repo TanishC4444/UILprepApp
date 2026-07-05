@@ -1,0 +1,388 @@
+{
+  "conference": "Unknown",
+  "regions": [
+    {
+      "region": 1,
+      "districts": [
+        {
+          "district": 1,
+          "schools": [
+            "Boys Ranch",
+            "Gruver",
+            "Sanford-Fritch",
+            "Spearman",
+            "Stinnett West",
+            "Stratford",
+            "Sunray",
+            "Vega"
+          ]
+        },
+        {
+          "district": 2,
+          "schools": [
+            "Amarillo Highland",
+            "Park",
+            "Amarillo N. Heights",
+            "Clarendon",
+            "Memphis",
+            "Panhandle",
+            "Quanah",
+            "Wellington",
+            "Wheeler"
+          ]
+        },
+        {
+          "district": 3,
+          "schools": [
+            "Bovina",
+            "Farwell",
+            "Hale Center",
+            "Lockney",
+            "Olton",
+            "Sudan",
+            "Tulia"
+          ]
+        },
+        {
+          "district": 4,
+          "schools": [
+            "Abernathy",
+            "Floydada",
+            "New Deal",
+            "New Home",
+            "Post",
+            "Tahoka"
+          ]
+        },
+        {
+          "district": 5,
+          "schools": [
+            "Morton",
+            "Plains",
+            "Ropes",
+            "Seagraves",
+            "Texas Smyer",
+            "Sundown"
+          ]
+        },
+        {
+          "district": 6,
+          "schools": [
+            "Big Lake Reagan",
+            "McCamey",
+            "Ozona",
+            "Van Horn",
+            "Wink"
+          ]
+        },
+        {
+          "district": 7,
+          "schools": [
+            "Brady",
+            "Christoval",
+            "Eldorado",
+            "Junction",
+            "Mason",
+            "Sonora"
+          ]
+        },
+        {
+          "district": 8,
+          "schools": [
+            "Ballinger",
+            "Colorado City",
+            "Colorado",
+            "Forsan",
+            "Miles",
+            "Pathway Academy",
+            "Roscoe Collegiate",
+            "Winters"
+          ]
+        }
+      ]
+    },
+    {
+      "region": 2,
+      "districts": [
+        {
+          "district": 9,
+          "schools": [
+            "Bangs",
+            "Cisco",
+            "Coleman",
+            "Cross Plains",
+            "De Leon",
+            "Goldthwaite",
+            "San Saba"
+          ]
+        },
+        {
+          "district": 10,
+          "schools": [
+            "Co.",
+            "Abilene Texas",
+            "Leadership",
+            "Albany",
+            "Anson",
+            "Hamlin",
+            "Haskell",
+            "Hawley",
+            "Munday",
+            "Stamford"
+          ]
+        },
+        {
+          "district": 11,
+          "schools": [
+            "Archer City",
+            "Electra",
+            "Nocona",
+            "Olney",
+            "Petrolia",
+            "Seymour",
+            "Windthorst"
+          ]
+        },
+        {
+          "district": 12,
+          "schools": [
+            "Alvord",
+            "Birdville Griggs",
+            "Chico",
+            "Lipan",
+            "Poolville",
+            "Santo",
+            "Slidell"
+          ]
+        },
+        {
+          "district": 13,
+          "schools": [
+            "Collinsville",
+            "Era",
+            "Flower Mound",
+            "Universal",
+            "Irving Univrsl",
+            "Lindsay",
+            "Muenster",
+            "Tioga",
+            "Tom Bean",
+            "Whitewright"
+          ]
+        },
+        {
+          "district": 14,
+          "schools": [
+            "Celeste",
+            "Cooper",
+            "Honey Grove",
+            "Ivanhoe Rayburn",
+            "Sulphur Springs",
+            "Hopkins",
+            "Trenton",
+            "Wolfe City"
+          ]
+        },
+        {
+          "district": 15,
+          "schools": [
+            "Alba-Golden",
+            "Como-Pickton",
+            "Cumby",
+            "Fate PTAA",
+            "Greenville",
+            "IL Texas Lancaster",
+            "DeSoto",
+            "Merit Bland",
+            "Village Tech"
+          ]
+        },
+        {
+          "district": 16,
+          "schools": [
+            "Bogata Rivercrest",
+            "Clarksville",
+            "Detroit",
+            "Harts Bluff",
+            "Maud",
+            "Omaha Pewitt",
+            "Simms Bowie"
+          ]
+        }
+      ]
+    },
+    {
+      "region": 3,
+      "districts": [
+        {
+          "district": 17,
+          "schools": [
+            "Axtell",
+            "Bosqueville",
+            "Crawford",
+            "Hico",
+            "Meridian",
+            "Valley Mills"
+          ]
+        },
+        {
+          "district": 18,
+          "schools": [
+            "Bremond",
+            "Bruceville-Eddy",
+            "Chilton",
+            "Mart",
+            "Moody",
+            "Riesel",
+            "Rosebud-Lott"
+          ]
+        },
+        {
+          "district": 19,
+          "schools": [
+            "Dawson",
+            "Frost",
+            "Hubbard",
+            "Italy",
+            "Itasca",
+            "Kerens",
+            "Malakoff Cross",
+            "Wortham"
+          ]
+        },
+        {
+          "district": 20,
+          "schools": [
+            "Big Sandy",
+            "Cayuga",
+            "Frankston",
+            "Gladewater Union",
+            "Grove",
+            "Hawkins",
+            "La Rue La Poynor",
+            "Martins Mill",
+            "Tyler UT Tyler",
+            "Acad."
+          ]
+        }
+      ]
+    },
+    {
+      "region": 4,
+      "districts": [
+        {
+          "district": 21,
+          "schools": [
+            "Beckville",
+            "Elysian Fields",
+            "Gary",
+            "Harleton",
+            "Linden-Kildare",
+            "Longview Chadwick",
+            "McLeod",
+            "Ore City",
+            "Waskom"
+          ]
+        },
+        {
+          "district": 22,
+          "schools": [
+            "Alto",
+            "Cushing",
+            "Douglass",
+            "Mount Enterprise",
+            "New Summerfield",
+            "Overton",
+            "Palestine UT",
+            "Univ. Acad.",
+            "Price Carlisle"
+          ]
+        },
+        {
+          "district": 23,
+          "schools": [
+            "Chireno",
+            "Garrison",
+            "Roads",
+            "Joaquin",
+            "San Augustine",
+            "Shelbyville",
+            "Timpson",
+            "Woden"
+          ]
+        },
+        {
+          "district": 24,
+          "schools": [
+            "Colmesneil",
+            "Dallardsville",
+            "Sandy",
+            "Deweyville",
+            "Evadale",
+            "Univ.",
+            "Hemphill",
+            "Sabine Pass",
+            "Saratoga West",
+            "West Sabine"
+          ]
+        },
+        {
+          "district": 25,
+          "schools": [
+            "Centerville",
+            "Corrigan-Camden",
+            "Grapeland",
+            "Groveton",
+            "Jewett Leon",
+            "Latexo",
+            "Lovelady"
+          ]
+        },
+        {
+          "district": 26,
+          "schools": [
+            "Burton",
+            "Hearne",
+            "IL Texas - Aggieland",
+            "Iola",
+            "Mumford",
+            "Normangee",
+            "Snook",
+            "Somerville",
+            "Tyler"
+          ]
+        },
+        {
+          "district": 27,
+          "schools": [
+            "Austin Texas",
+            "For The Blind",
+            "Bartlett",
+            "Bastrop Colorado",
+            "River Collegiate",
+            "Granger",
+            "Holland",
+            "McDade",
+            "Milano",
+            "Thorndale"
+          ]
+        },
+        {
+          "district": 28,
+          "schools": [
+            "Altair Rice Challenge",
+            "Bloomington",
+            "Big",
+            "Danbury",
+            "Flatonia",
+            "Ganado",
+            "Louise",
+            "Shiner",
+            "Hardin Weimar",
+            "Yorktown"
+          ]
+        }
+      ]
+    }
+  ]
+}

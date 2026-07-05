@@ -1,0 +1,65 @@
+name: Update UIL Alignments
+
+on:
+  schedule:
+    # Every Monday at 6:00 AM UTC (1:00 AM Central)
+    - cron: "0 6 * * 1"
+  workflow_dispatch:   # allow manual trigger from the Actions tab
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # needed to commit & push the updated JSON files
+
+    steps:
+      # ── 1. Check out the repo ──────────────────────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ── 2. Set up Python ───────────────────────────────────────────────────
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # ── 3. Cache pip dependencies ──────────────────────────────────────────
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-uil-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-uil-
+
+      # ── 4. Install dependencies ────────────────────────────────────────────
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install pdfplumber requests beautifulsoup4
+
+      # ── 5. Run the alignment pipeline ─────────────────────────────────────
+      - name: Run alignment pipeline
+        run: python alignment.py --pdf-dir alignments/pdfs --json-dir alignments/json
+
+      # ── 6. Check if anything actually changed ─────────────────────────────
+      - name: Check for changes
+        id: diff
+        run: |
+          git add alignments/
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No alignment changes detected."
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "Changes detected — will commit."
+          fi
+
+      # ── 7. Commit & push only when data changed ────────────────────────────
+      - name: Commit updated alignments
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: update UIL alignments $(date -u '+%Y-%m-%d')"
+          git push

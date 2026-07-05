@@ -1,0 +1,462 @@
+{
+  "conference": "Unknown",
+  "regions": [
+    {
+      "region": 1,
+      "districts": [
+        {
+          "district": 1,
+          "schools": [
+            "El Paso Andress",
+            "El Paso Austin",
+            "El Paso Bowie",
+            "El Paso Da Vinci",
+            "El Paso Harmony",
+            "Science Academy",
+            "El Paso Irvin",
+            "El Paso",
+            "Transmountain",
+            "College",
+            "EP Harmony",
+            "Innovation",
+            "EP Young Women's",
+            "STEAM"
+          ]
+        },
+        {
+          "district": 2,
+          "schools": [
+            "Clint",
+            "Clint Early College",
+            "Acad",
+            "Clint Mountain",
+            "El Paso Riverside",
+            "El Paso Valle",
+            "El Paso Ysleta",
+            "EP Mission ECHS",
+            "EP Young Women's",
+            "Leadership",
+            "Fabens",
+            "Harmony School",
+            "Science El Paso",
+            "San Elizario"
+          ]
+        },
+        {
+          "district": 3,
+          "schools": [
+            "Andrews",
+            "Fort Stockton",
+            "Midland Greenwood",
+            "Midland Young",
+            "Womens Leadership",
+            "Monahans",
+            "Pecos",
+            "Seminole"
+          ]
+        },
+        {
+          "district": 4,
+          "schools": [
+            "Borger",
+            "Canyon",
+            "Canyon Randall",
+            "Canyon West",
+            "Dumas",
+            "Hereford",
+            "Pampa",
+            "Perryton"
+          ]
+        },
+        {
+          "district": 5,
+          "schools": [
+            "Big Spring",
+            "Levelland",
+            "Lubbock Cooper",
+            "Liberty",
+            "Lubbock Estacado",
+            "Plainview",
+            "San Angelo Lake",
+            "Snyder",
+            "Early"
+          ]
+        },
+        {
+          "district": 6,
+          "schools": [
+            "Abilene A.T.E.M.S.",
+            "Brock",
+            "Brownwood",
+            "Glen Rose",
+            "Graham",
+            "Mineral Wells",
+            "Stephenville",
+            "View District 7",
+            "Bridgeport",
+            "Verde",
+            "Burkburnett",
+            "Decatur",
+            "Iowa Park",
+            "Lake Worth",
+            "River Oaks",
+            "Castleberry",
+            "of",
+            "Springtown"
+          ]
+        },
+        {
+          "district": 8,
+          "schools": [
+            "Ft Worth Acad",
+            "Arts",
+            "Ft Worth Benbrook",
+            "Ft Worth Carter-",
+            "Riverside",
+            "Ft Worth Dunbar",
+            "Ft Worth Eastern",
+            "Ft Worth Southwest",
+            "Ft Worth Tx",
+            "Biomedical",
+            "Ft Worth Western",
+            "Hills",
+            "FW Diamond",
+            "Jarvis",
+            "FW Marine Creek",
+            "Collegiate",
+            "Plains",
+            "FW TCC South",
+            "Collegiate",
+            "FW Terrell",
+            "FW World Languages",
+            "Institute",
+            "FW Young Men's",
+            "Leadership Acad",
+            "FW Young Women's",
+            "Leadership"
+          ]
+        }
+      ]
+    },
+    {
+      "region": 2,
+      "districts": [
+        {
+          "district": 9,
+          "schools": [
+            "Aubrey",
+            "Gainesville",
+            "IL Texas - Keller",
+            "Saginaw",
+            "Krum",
+            "Lake Dallas",
+            "View Northwest Steele",
+            "Ponder",
+            "Sanger",
+            "Van Alstyne"
+          ]
+        },
+        {
+          "district": 10,
+          "schools": [
+            "Carrollton Ranchview",
+            "D North Lake",
+            "Dallas City Lab",
+            "Dallas Conrad",
+            "Dallas Garza",
+            "College",
+            "Dallas Innov.",
+            "Entr.",
+            "Dallas Kimball",
+            "Dallas Lassiter",
+            "Dallas Pinkston",
+            "North Dallas",
+            "Uplift North"
+          ]
+        },
+        {
+          "district": 11,
+          "schools": [
+            "Dallas Carter",
+            "Dallas Gilliam",
+            "Fine Collegiate",
+            "Dallas Haynes",
+            "Prep",
+            "Dallas Hutchins",
+            "Dallas Lincoln",
+            "Dallas New Tech",
+            "Hills",
+            "Dallas Obama",
+            "Dallas Rangel",
+            "Acad of",
+            "Dallas Roosevelt",
+            "Science",
+            "Dallas Spruce"
+          ]
+        },
+        {
+          "district": 12,
+          "schools": [
+            "Hill-",
+            "Alvarado",
+            "Ferris",
+            "FW Harmony",
+            "Innovation",
+            "Godley",
+            "Hillsboro",
+            "IL Texas - Arlington",
+            "Grand Prairie",
+            "Kennedale",
+            "Venus",
+            "Waxahachie"
+          ]
+        },
+        {
+          "district": 13,
+          "schools": [
+            "Caddo Mills",
+            "Farmersville",
+            "IL Texas-Garland",
+            "Kaufman",
+            "Quinlan Ford",
+            "Sunnyvale",
+            "EC",
+            "Wills Point"
+          ]
+        },
+        {
+          "district": 14,
+          "schools": [
+            "Bonham",
+            "Paris",
+            "Paris North",
+            "Pittsburg",
+            "ECHS",
+            "Sulphur Springs",
+            "Texarkana",
+            "Grove",
+            "Early"
+          ]
+        },
+        {
+          "district": 15,
+          "schools": [
+            "Athens",
+            "Design",
+            "Brownsboro",
+            "Canton",
+            "ECHS Kemp",
+            "Lindale",
+            "Mabank",
+            "Hills Prep Van"
+          ]
+        },
+        {
+          "district": 16,
+          "schools": [
+            "Carthage",
+            "Cumberland",
+            "Gilmer",
+            "Global Henderson",
+            "Kilgore",
+            "Longview Pine",
+            "Longview Spring",
+            "Tyler Chapel",
+            "Acad",
+            "Life"
+          ]
+        }
+      ]
+    },
+    {
+      "region": 3,
+      "districts": [
+        {
+          "district": 17,
+          "schools": [
+            "Bullard",
+            "Center",
+            "Hudson",
+            "Jacksonville",
+            "Madisonville",
+            "Palestine",
+            "Rusk"
+          ]
+        },
+        {
+          "district": 18,
+          "schools": [
+            "Bridge City",
+            "Jasper",
+            "Lumberton",
+            "Orange Little",
+            "Mauriceville",
+            "Silsbee",
+            "Vidor",
+            "West Orange-Stark"
+          ]
+        },
+        {
+          "district": 19,
+          "schools": [
+            "Baytown Stuart",
+            "Galena Park",
+            "ECHS",
+            "Hamshire-Fannett",
+            "Hardin-Jefferson",
+            "Huffman Hargrave",
+            "Humble Sconzo",
+            "IL Texas Liberty",
+            "Liberty",
+            "Livingston",
+            "Shepherd"
+          ]
+        },
+        {
+          "district": 20,
+          "schools": [
+            "H Austin",
+            "H Challenge",
+            "H Energized",
+            "Cent",
+            "H Furr",
+            "H International",
+            "H Jane Long",
+            "H Kashmere",
+            "H Liberty",
+            "H North Forest",
+            "H Northside",
+            "H Scarborough",
+            "H Washington",
+            "N Houston Early",
+            "College"
+          ]
+        }
+      ]
+    },
+    {
+      "region": 4,
+      "districts": [
+        {
+          "district": 21,
+          "schools": [
+            "H Acd Int\u2019l Studies",
+            "H East Early",
+            "H Jones Futures",
+            "H Mickey Leland",
+            "College Prep",
+            "H South ECHS",
+            "H Sterling",
+            "H Wheatley",
+            "H Worthing",
+            "H Yates",
+            "H Young Womens",
+            "College Prep",
+            "Cypress- Hitchcock",
+            "IL Texas - Windmill",
+            "Lakes Orem",
+            "La Marque"
+          ]
+        },
+        {
+          "district": 22,
+          "schools": [
+            "Bay City",
+            "El Campo",
+            "CTE Fort Bend",
+            "Willowridge",
+            "Freeport Brazosport",
+            "Harmony School",
+            "Innovation",
+            "ECHS IL TX Katy-Westpark",
+            "Needville",
+            "Stafford",
+            "West Columbia",
+            "Columbia"
+          ]
+        },
+        {
+          "district": 23,
+          "schools": [
+            "Bellville",
+            "Giddings",
+            "EC",
+            "Katy Harmony",
+            "for Stem -",
+            "La Grange",
+            "Navasota",
+            "Royal",
+            "Academy Sealy",
+            "Tomball West"
+          ]
+        },
+        {
+          "district": 24,
+          "schools": [
+            "China Spring",
+            "Gatesville",
+            "Killeen ECHS",
+            "Robinson",
+            "Salado",
+            "Waco Connally",
+            "Waco La Vega"
+          ]
+        },
+        {
+          "district": 25,
+          "schools": [
+            "Burnet",
+            "College Cedar Park BASIS",
+            "Acad Georgetown",
+            "Jarrell",
+            "Acad",
+            "Lago Vista",
+            "Lampasas",
+            "Leander Early",
+            "Marble Falls"
+          ]
+        },
+        {
+          "district": 26,
+          "schools": [
+            "Austin Ann Richards",
+            "Acad Austin Northeast",
+            "Austin Travis",
+            "Manor Excel",
+            "HS",
+            "Manor New",
+            "Taylor",
+            "Taylor Legacy"
+          ]
+        },
+        {
+          "district": 27,
+          "schools": [
+            "Bandera",
+            "Comal Canyon",
+            "Comal Davenport",
+            "Fredericksburg",
+            "of",
+            "Kerrville Tivy",
+            "Wimberley"
+          ]
+        },
+        {
+          "district": 28,
+          "schools": [
+            "Medina Valley",
+            "View",
+            "Pearsall",
+            "Pleasanton",
+            "SA Harmony",
+            "SA STEAM Fine",
+            "San Antonio",
+            "San Antonio",
+            "Somerset",
+            "Uvalde"
+          ]
+        }
+      ]
+    }
+  ]
+}

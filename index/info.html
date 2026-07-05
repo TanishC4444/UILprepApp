@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UIL Prep — Get Started</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* ── info-page additions ──────────────────────────────────────────── */
+
+.info-divider { width:100%; height:1px; background:var(--line); margin:0.55vw 0; flex-shrink:0; }
+
+/* contact rows */
+.contact-detail { display:flex; flex-direction:column; gap:0.38vw; }
+.contact-row    { display:flex; align-items:flex-start; gap:0.5rem;
+                  font-size:clamp(0.6rem,.72vw,.76rem); color:var(--ink-dim); line-height:1.45; }
+.contact-row-label { font-weight:700; color:var(--ink); white-space:nowrap; min-width:3.2rem; flex-shrink:0; }
+
+/* event list */
+.event-list { display:flex; flex-direction:column; gap:0.26vw; flex:1; overflow:hidden; min-height:0; }
+.event-row  { display:flex; align-items:baseline; gap:0.45rem;
+              font-size:clamp(0.6rem,.7vw,.74rem); line-height:1.35; }
+.event-row-name   { font-weight:600; color:var(--ink); }
+.event-row-grades { font-weight:400; color:var(--ink-dim); }
+
+/* stat strip */
+.info-stats { display:flex; gap:1vw; flex-wrap:wrap; margin-top:auto; padding-top:0.5vw;
+              border-top:1px solid var(--line); flex-shrink:0; }
+.info-stat  { display:flex; flex-direction:column; gap:0.08vw; }
+.info-stat-num   { font-family:'Sora',sans-serif; font-size:clamp(.9rem,1.3vw,1.35rem);
+                   font-weight:800; color:var(--blue); line-height:1; }
+.info-stat-label { font-size:clamp(.55rem,.62vw,.66rem); font-weight:600;
+                   letter-spacing:.1em; text-transform:uppercase; color:var(--ink-dim); }
+
+/* ── school lookup ─────────────────────────────────────────────────── */
+.lookup-wrap   { display:flex; flex-direction:column; gap:0.4vw; flex:1; min-height:0; }
+.lookup-status { font-size:clamp(.58rem,.65vw,.7rem); color:var(--ink-dim);
+                 font-style:italic; flex-shrink:0; min-height:1em; }
+
+/* The <select> styled to match the site */
+.lookup-select {
+  width:100%;
+  font-family:'Inter',sans-serif;
+  font-size:clamp(.68rem,.78vw,.84rem);
+  font-weight:500;
+  color:var(--ink);
+  background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%2314161c' opacity='.4'/%3E%3C/svg%3E") no-repeat right 0.6vw center / 0.5vw auto;
+  border:1.5px solid var(--line);
+  border-radius:6px;
+  padding:0.48vw 1.8vw 0.48vw 0.65vw;
+  outline:none;
+  appearance:none;
+  -webkit-appearance:none;
+  cursor:pointer;
+  transition:border-color .2s ease;
+  flex-shrink:0;
+}
+.lookup-select:focus { border-color:var(--blue); }
+.lookup-select:disabled { opacity:.45; cursor:default; }
+
+/* result card */
+.lookup-result-card {
+  display:none; flex-direction:column; gap:0.28vw;
+  background:var(--blue-tint);
+  border:1.5px solid rgba(56,79,150,.18);
+  border-left:3px solid var(--blue);
+  border-radius:6px;
+  padding:0.5vw 0.7vw;
+  flex-shrink:0;
+}
+.lookup-result-card.visible { display:flex; }
+.lresult-school {
+  font-family:'Sora',sans-serif;
+  font-size:clamp(.74rem,.85vw,.92rem);
+  font-weight:700; color:var(--ink);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.lresult-row   { display:flex; gap:.35rem; flex-wrap:wrap; }
+.lresult-badge {
+  font-size:clamp(.55rem,.62vw,.67rem);
+  font-weight:700; letter-spacing:.07em; text-transform:uppercase;
+  padding:.15rem .45rem; border-radius:4px;
+}
+.lbadge-conf     { background:var(--blue); color:#fff; }
+.lbadge-region   { background:rgba(56,79,150,.12); color:var(--blue); }
+.lbadge-district { background:rgba(208,71,63,.1);  color:var(--red);  }
+
+/* survey-tile meta */
+.survey-meta { display:flex; flex-direction:column; gap:.32vw; margin-top:.1vw; flex:1; }
+.survey-meta-row { display:flex; align-items:baseline; gap:.5rem;
+                   font-size:clamp(.6rem,.7vw,.74rem); line-height:1.4; }
+.smr-label { font-weight:700; color:var(--ink); white-space:nowrap; min-width:3.5rem; flex-shrink:0; }
+.smr-val   { color:var(--ink-dim); }
+
+/* responsive */
+@media (max-width:900px){
+  .lookup-select { font-size:3.6vw; padding:2vw 8vw 2vw 2.5vw; background-size:3vw auto; background-position:right 2.5vw center; }
+  .lresult-school { font-size:4vw; }
+  .lresult-badge  { font-size:2.6vw; padding:.5vw 1.5vw; }
+  .info-stat-num  { font-size:5.5vw; }
+  .info-stat-label{ font-size:2.6vw; }
+  .event-row      { font-size:3.3vw; }
+  .contact-row    { font-size:3.3vw; }
+}
+</style>
+</head>
+<body>
+
+  <div class="page-header">
+    <a href="main.html" class="back-link">&larr; Back to Home</a>
+    <h1 class="page-title">Get Started &amp; Help</h1>
+    <span class="page-header-spacer"></span>
+  </div>
+
+  <div class="info-grid">
+
+    <!-- CALENDAR ─────────────────────────────────────────────── -->
+    <div class="info-tile info-tile-calendar tile-anim" style="--delay:0s">
+      <div class="info-tile-head">
+        <span class="tile-tag tag-blue">Calendar</span>
+        <h2 class="info-title">UIL Events Calendar</h2>
+      </div>
+      <div class="calendar-embed">
+        <iframe
+          src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FChicago&src=YWRtaW5AdWlsdGV4YXMub3Jn&src=YjlzbmFwdmVkaXVpNTljcnF0Mm40amRlM3NAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=dWpsdGNsYjE1ZjExNzhqcWM3c3BkdDltaWdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=YzNkc2E2NmRoZTRuZ3ZlbmN0MWFxY2pkc3NAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=dTZ1dDVoMXVyaXJpcGRoczFxdGsxN2Qwam9AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=YjZxOTExbzVicG01ZG1ydXBnazJsN3ZmdWtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%23795548&color=%233F51B5&color=%238E24AA&color=%23795548&color=%230B8043&color=%23F4511E"
+          style="border:0" width="100%" height="100%" frameborder="0" scrolling="no">
+        </iframe>
+      </div>
+      <a href="https://www.uiltexas.org/calendar" target="_blank" rel="noopener" class="btn btn-outline">Open Full Calendar &#8599;</a>
+    </div>
+
+    <!-- REPORT ISSUE ─────────────────────────────────────────── -->
+    <div class="info-tile info-tile-contact tile-anim" style="--delay:0.08s">
+      <span class="tile-tag tag-red">Support</span>
+      <h2 class="info-title">Report an Issue</h2>
+      <p class="info-desc">Found a bug, incorrect information, or something broken? Email the developer directly.</p>
+      <div class="info-divider"></div>
+      <div class="contact-detail">
+        <div class="contact-row">
+          <span class="contact-row-label">Response</span>
+          <span>Within 24–48 hours on school days.</span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-row-label">Include</span>
+          <span>Page, what you expected, and what happened.</span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-row-label">Subject</span>
+          <span>Auto-filled when you click below.</span>
+        </div>
+      </div>
+      <a href="mailto:tanishchauhan4444@gmail.com?subject=UIL%20Prep%20App%20Issue%20Ticket"
+         class="btn btn-solid btn-solid-red" style="margin-top:auto">Email the Developer &rarr;</a>
+    </div>
+
+    <!-- SCHOOL LOOKUP ────────────────────────────────────────── -->
+    <div class="info-tile info-tile-reclass tile-anim" style="--delay:0.16s">
+      <span class="tile-tag tag-blue">Alignment</span>
+      <h2 class="info-title">Find Your School</h2>
+      <p class="info-desc" style="margin-bottom:0.3vw; flex-shrink:0;">UIL places every Texas school into a conference (1A–6A) by enrollment, then into a region and district for competition.</p>
+
+      <div class="lookup-wrap">
+        <select id="schoolSelect" class="lookup-select" disabled>
+          <option value="">Loading schools…</option>
+        </select>
+        <p class="lookup-status" id="lookupStatus">Fetching alignment data…</p>
+        <div class="lookup-result-card" id="lookupResult">
+          <span class="lresult-school" id="lresultName"></span>
+          <div class="lresult-row" id="lresultBadges"></div>
+        </div>
+      </div>
+
+      <a href="https://www.uiltexas.org/alignments/category/align-academics"
+         target="_blank" rel="noopener" class="btn btn-outline" style="margin-top:0.5vw;flex-shrink:0">
+        Full Alignment List &#8599;</a>
+    </div>
+
+    <!-- EVENTS AT A GLANCE ───────────────────────────────────── -->
+    <div class="info-tile tile-anim" style="--delay:0.24s; grid-column:2/3; grid-row:2/3;
+         border-top:4px solid var(--blue);
+         clip-path:polygon(0 0,100% 0,100% 100%,22px 100%,0 calc(100% - 22px));">
+      <span class="tile-tag tag-blue">Junior Events</span>
+      <h2 class="info-title">Events at a Glance</h2>
+      <div class="event-list">
+        <div class="event-row"><span class="event-row-name">Calculator Applications</span><span class="event-row-grades">Gr. 6–8</span></div>
+        <div class="event-row"><span class="event-row-name">Chess Puzzles</span><span class="event-row-grades">Gr. 2–8</span></div>
+        <div class="event-row"><span class="event-row-name">Impromptu Speaking</span><span class="event-row-grades">Gr. 6–8</span></div>
+        <div class="event-row"><span class="event-row-name">Mathematics</span><span class="event-row-grades">Gr. 6–8</span></div>
+        <div class="event-row"><span class="event-row-name">Modern Oratory</span><span class="event-row-grades">Gr. 6–8</span></div>
+        <div class="event-row"><span class="event-row-name">Number Sense</span><span class="event-row-grades">Gr. 2–8</span></div>
+        <div class="event-row"><span class="event-row-name">Oral Reading</span><span class="event-row-grades">Gr. 4–9</span></div>
+        <div class="event-row"><span class="event-row-name">Science</span><span class="event-row-grades">Gr. 6–8</span></div>
+        <div class="event-row"><span class="event-row-name">Social Studies</span><span class="event-row-grades">Gr. 5–8</span></div>
+        <div class="event-row"><span class="event-row-name">Spelling &amp; Vocabulary</span><span class="event-row-grades">Gr. 3–8</span></div>
+      </div>
+      <div class="info-stats">
+        <div class="info-stat">
+          <span class="info-stat-num" id="statSchools">—</span>
+          <span class="info-stat-label">Schools</span>
+        </div>
+        <div class="info-stat">
+          <span class="info-stat-num">6</span>
+          <span class="info-stat-label">Conferences</span>
+        </div>
+        <div class="info-stat">
+          <span class="info-stat-num">10</span>
+          <span class="info-stat-label">Events</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- FIND YOUR FIT ────────────────────────────────────────── -->
+    <div class="info-tile info-tile-survey tile-anim" style="--delay:0.32s">
+      <span class="tile-tag tag-red">Assessment</span>
+      <h2 class="info-title">Which event fits you?</h2>
+      <p class="info-desc" style="flex-shrink:0;">Answer 7 questions about your academic strengths and preferences. Get a ranked list of the events most likely to suit you.</p>
+      <div class="info-divider" style="flex-shrink:0;"></div>
+      <div class="survey-meta">
+        <div class="survey-meta-row"><span class="smr-label">Time</span><span class="smr-val">~2 minutes</span></div>
+        <div class="survey-meta-row"><span class="smr-label">Covers</span><span class="smr-val">All 10 junior events, grades 2–9</span></div>
+        <div class="survey-meta-row"><span class="smr-label">Output</span><span class="smr-val">Ranked results with match reasoning</span></div>
+      </div>
+      <a href="survey.html" class="btn btn-solid btn-solid-blue" style="margin-top:auto">Start Assessment &rarr;</a>
+    </div>
+
+  </div>
+
+<!-- schools.js is generated by alignment.py → parse_all()
+     It assigns window.UIL_SCHOOLS = [{name,conference,region,district}, ...]
+     Loading it as a plain script tag means it works on file://, GitHub Pages,
+     or any static host — no fetch(), no server, no CORS issues. -->
+<script src="alignments/json/schools.js" onerror="schoolsLoadFailed()"></script>
+<script>
+function schoolsLoadFailed() {
+  document.getElementById('lookupStatus').textContent =
+    'School data not found — run alignment.py first to generate schools.js.';
+}
+
+(function () {
+  const selEl      = document.getElementById('schoolSelect');
+  const statusEl   = document.getElementById('lookupStatus');
+  const resultCard = document.getElementById('lookupResult');
+  const resultName = document.getElementById('lresultName');
+  const resultBadge= document.getElementById('lresultBadges');
+  const statSchools= document.getElementById('statSchools');
+
+  if (!window.UIL_SCHOOLS || !window.UIL_SCHOOLS.length) {
+    // schools.js loaded but was empty, or onerror fired before this ran
+    statusEl.textContent =
+      'School data not found — run alignment.py first to generate schools.js.';
+    return;
+  }
+
+  const schools = window.UIL_SCHOOLS;
+
+  // Build <select> grouped by conference → region → district
+  // Group into a nested map first
+  const tree = {}; // conf → region → district → [entries]
+  for (const s of schools) {
+    const c = s.conference, r = s.region, d = s.district;
+    if (!tree[c])       tree[c]       = {};
+    if (!tree[c][r])    tree[c][r]    = {};
+    if (!tree[c][r][d]) tree[c][r][d] = [];
+    tree[c][r][d].push(s);
+  }
+
+  selEl.innerHTML = '<option value="">— Select your school —</option>';
+
+  for (const conf of Object.keys(tree).sort()) {
+    for (const reg of Object.keys(tree[conf]).map(Number).sort((a,b)=>a-b)) {
+      for (const dist of Object.keys(tree[conf][reg]).map(Number).sort((a,b)=>a-b)) {
+        const entries = tree[conf][reg][dist];
+        const og = document.createElement('optgroup');
+        og.label = `${conf} · Region ${reg} · District ${dist}`;
+        for (const s of entries) {
+          const opt = document.createElement('option');
+          // value encodes all three fields so we can look up on change
+          opt.value = `${conf}|${reg}|${dist}|${s.name}`;
+          opt.textContent = s.name;
+          og.appendChild(opt);
+        }
+        selEl.appendChild(og);
+      }
+    }
+  }
+
+  selEl.disabled = false;
+  const total = schools.length;
+  statusEl.textContent = `${total.toLocaleString()} schools across 6 conferences.`;
+  statSchools.textContent = total.toLocaleString();
+
+  selEl.addEventListener('change', () => {
+    const val = selEl.value;
+    if (!val) { resultCard.classList.remove('visible'); return; }
+    const [conf, region, district, ...nameParts] = val.split('|');
+    const name = nameParts.join('|'); // handles any | in school names
+    resultName.textContent = name;
+    resultBadge.innerHTML  =
+      `<span class="lresult-badge lbadge-conf">${conf}</span>` +
+      `<span class="lresult-badge lbadge-region">Region ${region}</span>` +
+      `<span class="lresult-badge lbadge-district">District ${district}</span>`;
+    resultCard.classList.add('visible');
+  });
+})();
+</script>
+
+</body>
+</html>

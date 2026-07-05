@@ -1,0 +1,432 @@
+{
+  "conference": "Unknown",
+  "regions": [
+    {
+      "region": 1,
+      "districts": [
+        {
+          "district": 1,
+          "schools": [
+            "El Paso Coronado",
+            "El Paso Eastlake",
+            "El Paso Eastwood",
+            "El Paso Franklin",
+            "El Paso Montwood",
+            "El Paso Pebble",
+            "El Paso Socorro"
+          ]
+        },
+        {
+          "district": 2,
+          "schools": [
+            "Midland",
+            "Midland Lee",
+            "Odessa",
+            "Odessa Permian",
+            "San Angelo Central"
+          ]
+        },
+        {
+          "district": 3,
+          "schools": [
+            "Aledo",
+            "Arlington",
+            "Arlington Bowie",
+            "Arlington Houston",
+            "Arlington Lamar",
+            "Arlington Martin",
+            "Granbury",
+            "Weatherford"
+          ]
+        },
+        {
+          "district": 4,
+          "schools": [
+            "Ft Worth Boswell",
+            "Keller",
+            "Keller Central",
+            "Keller Timber",
+            "Northwest",
+            "Northwest Eaton",
+            "Northwest Nelson",
+            "Southlake Carroll"
+          ]
+        },
+        {
+          "district": 5,
+          "schools": [
+            "Denton Braswell",
+            "Denton Guyer",
+            "Frisco Wakeland",
+            "Lewisville",
+            "Lewisville Flower",
+            "Mound",
+            "Hills",
+            "Lewisville Hebron",
+            "Lewisville Marcus",
+            "Little Elm"
+          ]
+        },
+        {
+          "district": 6,
+          "schools": [
+            "Allen",
+            "Dallas Jesuit",
+            "McKinney",
+            "McKinney Boyd",
+            "Princeton",
+            "Prosper",
+            "Prosper Rock",
+            "Prosper Walnut"
+          ]
+        },
+        {
+          "district": 7,
+          "schools": [
+            "Coppell",
+            "Plano",
+            "Plano East",
+            "Plano West",
+            "Richardson",
+            "Richardson Berkner",
+            "Richardson Lake",
+            "Highlands",
+            "Richardson Pearce",
+            "Creek"
+          ]
+        },
+        {
+          "district": 8,
+          "schools": [
+            "Euless Trinity",
+            "Grand Prairie",
+            "Grand Prairie",
+            "Arts Acad",
+            "Haltom City",
+            "Hurst Bell",
+            "Irving",
+            "Irving MacArthur",
+            "Irving Nimitz",
+            "South Grand"
+          ]
+        }
+      ]
+    },
+    {
+      "region": 2,
+      "districts": [
+        {
+          "district": 9,
+          "schools": [
+            "Garland",
+            "Garland Lakeview",
+            "Cent",
+            "Garland Rowlett",
+            "Garland Sachse",
+            "North Garland",
+            "South Garland",
+            "Wylie",
+            "Wylie East"
+          ]
+        },
+        {
+          "district": 10,
+          "schools": [
+            "Forney",
+            "Longview",
+            "Mesquite Horn",
+            "North Forney",
+            "Rockwall",
+            "Rockwall Heath",
+            "Hill Royse City",
+            "Grove Tyler Legacy"
+          ]
+        },
+        {
+          "district": 11,
+          "schools": [
+            "Crowley",
+            "Dallas Skyline",
+            "Dallas Washington",
+            "Arts Mag.",
+            "Duncanville",
+            "Mansfield",
+            "Mansfield Lake",
+            "North Crowley",
+            "Red Oak",
+            "Waxahachie"
+          ]
+        },
+        {
+          "district": 12,
+          "schools": [
+            "Bryan",
+            "Fine Copperas Cove",
+            "Killeen Chaparral",
+            "Haltom",
+            "Killeen Harker",
+            "Heights",
+            "Lake Belton",
+            "Temple",
+            "Waco Midway",
+            "Prairie"
+          ]
+        },
+        {
+          "district": 13,
+          "schools": [
+            "Cleveland",
+            "Conroe",
+            "Conroe Caney",
+            "Conroe Grand",
+            "Conroe Oak",
+            "Conroe The",
+            "Woodlands",
+            "Conroe Woodlands",
+            "College Park",
+            "Willis"
+          ]
+        },
+        {
+          "district": 14,
+          "schools": [
+            "Houston Aldine",
+            "Houston Benjamin",
+            "Davis Sr",
+            "Houston Carver",
+            "Houston Eisenhower",
+            "Houston MacArthur",
+            "Houston Nimitz",
+            "Spring",
+            "Spring Dekaney",
+            "Spring Early",
+            "Acad",
+            "Spring Westfield",
+            "Spring Wunsche"
+          ]
+        },
+        {
+          "district": 15,
+          "schools": [
+            "Klein",
+            "Ridge",
+            "Klein Cain",
+            "Klein Collins",
+            "Klein Forest",
+            "Klein Oak",
+            "Magnolia",
+            "Magnolia West",
+            "Tomball",
+            "Tomball Memorial"
+          ]
+        },
+        {
+          "district": 16,
+          "schools": [
+            "Cy-Fair",
+            "Cyp. Creek",
+            "Cyp. Falls",
+            "Cyp. Lakes",
+            "Cyp. Ridge",
+            "Cyp. Woods",
+            "Jersey Village",
+            "Langham Creek"
+          ]
+        }
+      ]
+    },
+    {
+      "region": 3,
+      "districts": [
+        {
+          "district": 17,
+          "schools": [
+            "Channelview",
+            "Crosby",
+            "Galena Park",
+            "Shore",
+            "Humble",
+            "Humble Atascocita",
+            "Humble Kingwood",
+            "Humble Summer",
+            "Creek",
+            "Sheldon King"
+          ]
+        },
+        {
+          "district": 18,
+          "schools": [
+            "Deer Park",
+            "Dickinson",
+            "Frndswd Clear",
+            "Houston Clear",
+            "LC Clear Creek",
+            "LC Clear Falls",
+            "LC Clear Horizons",
+            "LC Clear Springs",
+            "Mt Belvieu Barbers",
+            "Hill"
+          ]
+        },
+        {
+          "district": 19,
+          "schools": [
+            "Alvin",
+            "Alvin Shadow",
+            "Clute Brazoswood",
+            "Manvel",
+            "Pasadena Dobie",
+            "Pasadena Kirk",
+            "CTHS",
+            "Pasadena Memorial",
+            "Pasadena Rayburn",
+            "Pearland",
+            "Pearland Dawson",
+            "Pearland Turner"
+          ]
+        },
+        {
+          "district": 20,
+          "schools": [
+            "Alief Early College",
+            "Alief Elsik",
+            "Alief Hastings",
+            "Alief Kerr",
+            "Alief Taylor",
+            "H Bellaire",
+            "H Carnegie Vanguard",
+            "H Heights",
+            "H Lamar",
+            "H Performing",
+            "Visual Arts",
+            "H Westside",
+            "Houston Memorial",
+            "Houston Stratford"
+          ]
+        }
+      ]
+    },
+    {
+      "region": 4,
+      "districts": [
+        {
+          "district": 21,
+          "schools": [
+            "Fort Bend Austin",
+            "Fort Bend Bush",
+            "North Fort Bend Clements",
+            "Fort Bend Elkins",
+            "Fort Bend Hightower",
+            "Fort Bend Ridge",
+            "Fort Bend Travis",
+            "Houston Strake"
+          ]
+        },
+        {
+          "district": 22,
+          "schools": [
+            "Katy",
+            "Katy Cinco Ranch",
+            "Katy Jordan",
+            "Katy Mayde",
+            "Brook",
+            "Katy Morton",
+            "Lake",
+            "Katy Paetow",
+            "Katy Seven Lakes",
+            "Katy Taylor",
+            "Katy Tompkins"
+          ]
+        },
+        {
+          "district": 23,
+          "schools": [
+            "Bridgeland",
+            "Cyp. Park",
+            "Cyp. Ranch",
+            "Cyp. Springs",
+            "Creek",
+            "Lamar Fulshear",
+            "Richmond Foster",
+            "Richmond George",
+            "Ranch",
+            "Lewis",
+            "Waller"
+          ]
+        },
+        {
+          "district": 24,
+          "schools": [
+            "Austin Vandegrift",
+            "Cedar Park",
+            "Cedar Park Vista",
+            "Ridge",
+            "Georgetown",
+            "View",
+            "Hutto",
+            "Leander",
+            "Leander Rouse",
+            "and"
+          ]
+        },
+        {
+          "district": 25,
+          "schools": [
+            "Austin Lake Travis",
+            "Austin Westlake",
+            "Round Rock",
+            "Round Rock",
+            "College",
+            "Round Rock",
+            "Point",
+            "Round Rock",
+            "Round Rock",
+            "Jesuit",
+            "Westwood",
+            "RR Cedar Ridge"
+          ]
+        },
+        {
+          "district": 26,
+          "schools": [
+            "Austin",
+            "Austin Akins",
+            "Creek",
+            "Austin Bowie",
+            "Ranch",
+            "Buda Hays",
+            "Buda Johnson",
+            "Del Valle",
+            "Dripping Springs"
+          ]
+        },
+        {
+          "district": 27,
+          "schools": [
+            "Cibolo Steele",
+            "Comal Canyon",
+            "Comal Pieper",
+            "Converse Judson",
+            "San Antonio",
+            "San Antonio",
+            "San Marcos",
+            "Schertz Clemens"
+          ]
+        },
+        {
+          "district": 28,
+          "schools": [
+            "Northside Brandeis",
+            "Northside Clark",
+            "San Antonio",
+            "San Antonio",
+            "San Antonio",
+            "East San Antonio",
+            "San Antonio",
+            "San Antonio"
+          ]
+        }
+      ]
+    }
+  ]
+}

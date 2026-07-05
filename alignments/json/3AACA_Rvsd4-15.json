@@ -1,0 +1,443 @@
+{
+  "conference": "3A",
+  "regions": [
+    {
+      "region": 1,
+      "districts": [
+        {
+          "district": 1,
+          "schools": [
+            "Amarillo River",
+            "Bushland",
+            "Canadian",
+            "Childress",
+            "Dalhart",
+            "Dimmitt"
+          ]
+        },
+        {
+          "district": 2,
+          "schools": [
+            "Friona",
+            "Idalou",
+            "Littlefield",
+            "Lubbock Roosevelt",
+            "Lubbock Talkington",
+            "Muleshoe",
+            "Shallowater",
+            "Slaton"
+          ]
+        },
+        {
+          "district": 3,
+          "schools": [
+            "Brownfield",
+            "Coahoma",
+            "Crane",
+            "Denver City",
+            "Lamesa",
+            "Midland Early",
+            "Odessa Compass",
+            "Academy",
+            "Odessa STEM",
+            "Academy",
+            "Stanton"
+          ]
+        },
+        {
+          "district": 4,
+          "schools": [
+            "Alpine",
+            "Anthony",
+            "IDEA Edgemere",
+            "IDEA Rio Vista",
+            "College Prep",
+            "Kermit",
+            "Presidio",
+            "Tornillo"
+          ]
+        },
+        {
+          "district": 5,
+          "schools": [
+            "Road Clyde",
+            "Merkel",
+            "San Angelo Grape",
+            "Creek",
+            "San Angelo Texas",
+            "Leadership",
+            "Sweetwater",
+            "Tuscola Jim Ned",
+            "Wall"
+          ]
+        },
+        {
+          "district": 6,
+          "schools": [
+            "Bowie",
+            "Breckenridge",
+            "Henrietta",
+            "Holliday",
+            "Jacksboro",
+            "Vernon",
+            "Wichita Falls",
+            "View"
+          ]
+        },
+        {
+          "district": 7,
+          "schools": [
+            "Comanche",
+            "Dublin",
+            "Early",
+            "College",
+            "Eastland",
+            "Hamilton",
+            "Millsap",
+            "Peaster",
+            "Tolar"
+          ]
+        },
+        {
+          "district": 8,
+          "schools": [
+            "Boyd",
+            "Callisburg",
+            "Carrollton Harmony",
+            "Denton Lagrone",
+            "Academy",
+            "Denton Moore",
+            "Euless Harmony",
+            "Acad",
+            "GC Collegiate",
+            "TCC NE",
+            "Paradise",
+            "Pilot Point",
+            "Sadler S & S",
+            "Valley View",
+            "Whitesboro"
+          ]
+        }
+      ]
+    },
+    {
+      "region": 2,
+      "districts": [
+        {
+          "district": 9,
+          "schools": [
+            "Cedar Hill Collegiate",
+            "Dallas A+",
+            "Dallas Gateway",
+            "Charter Academy",
+            "Dallas Harmony",
+            "Business",
+            "Dallas Harmony",
+            "of Excellence",
+            "Dallas Harmony",
+            "Science Academy",
+            "Dallas Life Oak",
+            "Dallas Madison",
+            "Dallas YWSA",
+            "Harmony School",
+            "Inovation -",
+            "Inspired Vision",
+            "Academy Dallas",
+            "Mesquite PTAA",
+            "City",
+            "Trinity Leadership",
+            "Cedar Hill",
+            "UME Prep. Acad."
+          ]
+        },
+        {
+          "district": 10,
+          "schools": [
+            "Bells",
+            "Blue Ridge",
+            "Gunter",
+            "Howe",
+            "Leonard",
+            "Paris Chisum",
+            "Pattonville Prairiland",
+            "Pottsboro"
+          ]
+        },
+        {
+          "district": 11,
+          "schools": [
+            "Atlanta",
+            "S",
+            "De Kalb",
+            "Hooks",
+            "New Boston",
+            "Sci Queen City",
+            "Redwater",
+            "Acad Tex. Liberty-Eylau"
+          ]
+        },
+        {
+          "district": 12,
+          "schools": [
+            "Daingerfield",
+            "Diana New Diana",
+            "Cons.",
+            "Gladewater",
+            "Hughes Springs",
+            "Jefferson",
+            "Longview UT",
+            "Univ. Acad.",
+            "White Oak"
+          ]
+        },
+        {
+          "district": 13,
+          "schools": [
+            "Arp",
+            "Gladewater",
+            "New London",
+            "Rusk",
+            "Sch Tatum",
+            "Troup",
+            "Sch.",
+            "Tyler ISD ECHS",
+            "Winona"
+          ]
+        },
+        {
+          "district": 14,
+          "schools": [
+            "Cliff Big Sandy Harmony",
+            "Mineola",
+            "Mount Pleasant",
+            "of Chapel Hill",
+            "Garland",
+            "Mount Vernon",
+            "Quitman",
+            "Winnsboro"
+          ]
+        },
+        {
+          "district": 15,
+          "schools": [
+            "Commerce",
+            "Edgewood",
+            "Eustace",
+            "Grand Saline",
+            "Lone Oak",
+            "Malakoff",
+            "Rains",
+            "Scurry-Rosser"
+          ]
+        },
+        {
+          "district": 16,
+          "schools": [
+            "Blooming Grove",
+            "Burleson Collegiate",
+            "Grandview",
+            "Keene",
+            "Mansfield ECHS",
+            "Mansfield Frontier",
+            "Maypearl",
+            "Mildred",
+            "Palmer",
+            "Rice",
+            "Rio Vista",
+            "Waxahachie",
+            "Tyler"
+          ]
+        }
+      ]
+    },
+    {
+      "region": 3,
+      "districts": [
+        {
+          "district": 17,
+          "schools": [
+            "Buffalo",
+            "Elkhart",
+            "Fairfield",
+            "Groesbeck",
+            "Mexia",
+            "Palestine Westwood",
+            "Teague"
+          ]
+        },
+        {
+          "district": 18,
+          "schools": [
+            "Belton New Tech",
+            "Clifton",
+            "HSI - Waco",
+            "Lorena",
+            "McGregor",
+            "Troy",
+            "Waco Meyer",
+            "West",
+            "Whitney"
+          ]
+        },
+        {
+          "district": 19,
+          "schools": [
+            "Bryan Collegiate",
+            "Bryan Harris",
+            "Caldwell",
+            "Cameron Yoe",
+            "CS College View",
+            "Franklin",
+            "Lexington",
+            "Little River Academy",
+            "Rockdale",
+            "Rogers",
+            "Thrall"
+          ]
+        },
+        {
+          "district": 20,
+          "schools": [
+            "Anderson-Shiro",
+            "Cleveland Tarkington",
+            "Coldspring-Oakhurst",
+            "Crockett",
+            "New Caney Infinity",
+            "ECHS",
+            "New Waverly",
+            "Onalaska",
+            "Tomball Star",
+            "Trinity"
+          ]
+        }
+      ]
+    },
+    {
+      "region": 4,
+      "districts": [
+        {
+          "district": 21,
+          "schools": [
+            "Diboll",
+            "Huntington",
+            "Lufkin Pineywoods",
+            "Community",
+            "Academy",
+            "Nacogdoches",
+            "Heights",
+            "Newton",
+            "Pollok Central",
+            "Woodville"
+          ]
+        },
+        {
+          "district": 22,
+          "schools": [
+            "Anahuac",
+            "Baytown Hyland",
+            "Baytown Impact",
+            "Beaumont MLK",
+            "Collegiate",
+            "Beaumont Paul",
+            "Buna",
+            "East Chambers",
+            "Hardin",
+            "Kirbyville",
+            "Kountze",
+            "Orangefield",
+            "Warren"
+          ]
+        },
+        {
+          "district": 23,
+          "schools": [
+            "Altair Rice",
+            "Columbus",
+            "East Bernard",
+            "Hempstead",
+            "Schulenburg",
+            "Smithville",
+            "Wallis Brazos"
+          ]
+        },
+        {
+          "district": 24,
+          "schools": [
+            "Boling",
+            "Edna",
+            "El Maton Tidehaven",
+            "Palacios",
+            "Sweeny",
+            "Van Vleck",
+            "Vanderbilt Industrial",
+            "Acad.",
+            "Wharton"
+          ]
+        },
+        {
+          "district": 25,
+          "schools": [
+            "Austin IDEA",
+            "Springs",
+            "Blanco",
+            "Comfort",
+            "Central Florence",
+            "Hill Country",
+            "Prep",
+            "Ingram Moore",
+            "Llano"
+          ]
+        },
+        {
+          "district": 26,
+          "schools": [
+            "Comal Memorial",
+            "Goliad",
+            "Hallettsville",
+            "Karnes City",
+            "Luling",
+            "Brown Nixon Smiley",
+            "Yoakum"
+          ]
+        },
+        {
+          "district": 27,
+          "schools": [
+            "IDEA South Flores",
+            "College Prep",
+            "Jourdanton",
+            "Marion",
+            "Poteet",
+            "Poth",
+            "SA IDEA Burke",
+            "SA IDEA Carver",
+            "SA IDEA Judson",
+            "College Prep",
+            "SA Somerset",
+            "Brooks",
+            "SA Somerset",
+            "Coll.",
+            "SA Young Men's",
+            "Leadership",
+            "San Antonio",
+            "Stockdale",
+            "Universal City",
+            "Randolph"
+          ]
+        },
+        {
+          "district": 28,
+          "schools": [
+            "Carrizo Springs",
+            "Cotulla",
+            "Crystal City",
+            "Devine",
+            "Hondo",
+            "Lytle",
+            "Natalia"
+          ]
+        }
+      ]
+    }
+  ]
+}
