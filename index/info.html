@@ -11,7 +11,7 @@
 <style>
 /* ── info-page additions ──────────────────────────────────────────── */
 
-.info-divider { width:100%; height:1px; background:var(--line); margin:0.55vw 0; flex-shrink:0; }
+.info-divider { width:100%; height:1px; background:var(--line); margin:0.6vw 0; flex-shrink:0; }
 
 /* contact rows */
 .contact-detail { display:flex; flex-direction:column; gap:0.38vw; }
@@ -35,59 +35,6 @@
 .info-stat-label { font-size:clamp(.55rem,.62vw,.66rem); font-weight:600;
                    letter-spacing:.1em; text-transform:uppercase; color:var(--ink-dim); }
 
-/* ── school lookup ─────────────────────────────────────────────────── */
-.lookup-wrap   { display:flex; flex-direction:column; gap:0.4vw; flex:1; min-height:0; }
-.lookup-status { font-size:clamp(.58rem,.65vw,.7rem); color:var(--ink-dim);
-                 font-style:italic; flex-shrink:0; min-height:1em; }
-
-/* The <select> styled to match the site */
-.lookup-select {
-  width:100%;
-  font-family:'Inter',sans-serif;
-  font-size:clamp(.68rem,.78vw,.84rem);
-  font-weight:500;
-  color:var(--ink);
-  background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%2314161c' opacity='.4'/%3E%3C/svg%3E") no-repeat right 0.6vw center / 0.5vw auto;
-  border:1.5px solid var(--line);
-  border-radius:6px;
-  padding:0.48vw 1.8vw 0.48vw 0.65vw;
-  outline:none;
-  appearance:none;
-  -webkit-appearance:none;
-  cursor:pointer;
-  transition:border-color .2s ease;
-  flex-shrink:0;
-}
-.lookup-select:focus { border-color:var(--blue); }
-.lookup-select:disabled { opacity:.45; cursor:default; }
-
-/* result card */
-.lookup-result-card {
-  display:none; flex-direction:column; gap:0.28vw;
-  background:var(--blue-tint);
-  border:1.5px solid rgba(56,79,150,.18);
-  border-left:3px solid var(--blue);
-  border-radius:6px;
-  padding:0.5vw 0.7vw;
-  flex-shrink:0;
-}
-.lookup-result-card.visible { display:flex; }
-.lresult-school {
-  font-family:'Sora',sans-serif;
-  font-size:clamp(.74rem,.85vw,.92rem);
-  font-weight:700; color:var(--ink);
-  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
-}
-.lresult-row   { display:flex; gap:.35rem; flex-wrap:wrap; }
-.lresult-badge {
-  font-size:clamp(.55rem,.62vw,.67rem);
-  font-weight:700; letter-spacing:.07em; text-transform:uppercase;
-  padding:.15rem .45rem; border-radius:4px;
-}
-.lbadge-conf     { background:var(--blue); color:#fff; }
-.lbadge-region   { background:rgba(56,79,150,.12); color:var(--blue); }
-.lbadge-district { background:rgba(208,71,63,.1);  color:var(--red);  }
-
 /* survey-tile meta */
 .survey-meta { display:flex; flex-direction:column; gap:.32vw; margin-top:.1vw; flex:1; }
 .survey-meta-row { display:flex; align-items:baseline; gap:.5rem;
@@ -104,6 +51,87 @@
   .info-stat-label{ font-size:2.6vw; }
   .event-row      { font-size:3.3vw; }
   .contact-row    { font-size:3.3vw; }
+}
+
+/* competition ladder */
+.comp-ladder { display:flex; flex-direction:column; gap:0.4vw; flex-shrink:0; }
+
+.comp-step {
+  display:flex; align-items:flex-start; gap:0.6rem;
+}
+
+.comp-num {
+  font-family:'Sora',sans-serif;
+  font-size:clamp(0.62rem,0.72vw,0.78rem);
+  font-weight:800;
+  color:#fff;
+  background:var(--blue);
+  width:1.25rem; height:1.25rem;
+  border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0;
+  margin-top:1px;
+}
+
+.comp-step-final .comp-num { background:var(--red); }
+
+.comp-info { display:flex; flex-direction:column; gap:0.08rem; }
+
+.comp-name {
+  font-size:clamp(0.66rem,0.76vw,0.8rem);
+  font-weight:700;
+  color:var(--ink);
+  line-height:1.2;
+}
+
+.comp-desc {
+  font-size:clamp(0.58rem,0.66vw,0.7rem);
+  color:var(--ink-dim);
+  line-height:1.35;
+}
+
+/* conference PDF links */
+.conf-links-label {
+  font-size:clamp(0.56rem,0.64vw,0.68rem);
+  font-weight:700;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--ink-dim);
+  flex-shrink:0;
+  margin-bottom:0.35vw;
+}
+
+.conf-links {
+  display:flex;
+  gap:0.4vw;
+  flex-wrap:wrap;
+  flex-shrink:0;
+}
+
+.conf-link {
+  font-family:'Sora',sans-serif;
+  font-size:clamp(0.66rem,0.76vw,0.82rem);
+  font-weight:800;
+  text-decoration:none;
+  color:var(--blue);
+  border:1.5px solid rgba(56,79,150,0.25);
+  border-radius:5px;
+  padding:0.28vw 0.65vw;
+  background:var(--blue-tint);
+  transition:background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+}
+.conf-link:hover {
+  background:var(--blue);
+  border-color:var(--blue);
+  color:#fff;
+}
+
+@media (max-width:900px){
+  .comp-num  { width:5.5vw; height:5.5vw; font-size:2.8vw; }
+  .comp-name { font-size:3.2vw; }
+  .comp-desc { font-size:2.8vw; }
+  .conf-links-label { font-size:2.6vw; }
+  .conf-link { font-size:3.2vw; padding:1vw 2.5vw; }
 }
 </style>
 </head>
@@ -156,26 +184,56 @@
          class="btn btn-solid btn-solid-red" style="margin-top:auto">Email the Developer &rarr;</a>
     </div>
 
-    <!-- SCHOOL LOOKUP ────────────────────────────────────────── -->
+    <!-- ALIGNMENT / COMPETITION STRUCTURE ───────────────────── -->
     <div class="info-tile info-tile-reclass tile-anim" style="--delay:0.16s">
       <span class="tile-tag tag-blue">Alignment</span>
-      <h2 class="info-title">Find Your School</h2>
-      <p class="info-desc" style="margin-bottom:0.3vw; flex-shrink:0;">UIL places every Texas school into a conference (1A–6A) by enrollment, then into a region and district for competition.</p>
+      <h2 class="info-title">How Competition Works</h2>
+      <p class="info-desc" style="flex-shrink:0;">UIL places schools into conferences (1A–6A) by enrollment. Within your conference, you advance through four levels.</p>
 
-      <div class="lookup-wrap">
-        <select id="schoolSelect" class="lookup-select" disabled>
-          <option value="">Loading schools…</option>
-        </select>
-        <p class="lookup-status" id="lookupStatus">Fetching alignment data…</p>
-        <div class="lookup-result-card" id="lookupResult">
-          <span class="lresult-school" id="lresultName"></span>
-          <div class="lresult-row" id="lresultBadges"></div>
+      <div class="info-divider"></div>
+
+      <div class="comp-ladder">
+        <div class="comp-step">
+          <span class="comp-num">1</span>
+          <div class="comp-info">
+            <span class="comp-name">Invitationals</span>
+            <span class="comp-desc">Two optional pre-season meets. Good practice, no stakes.</span>
+          </div>
+        </div>
+        <div class="comp-step">
+          <span class="comp-num">2</span>
+          <div class="comp-info">
+            <span class="comp-name">District</span>
+            <span class="comp-desc">First official meet. Top finishers advance.</span>
+          </div>
+        </div>
+        <div class="comp-step">
+          <span class="comp-num">3</span>
+          <div class="comp-info">
+            <span class="comp-name">Region</span>
+            <span class="comp-desc">District winners from across your region compete. Top advance.</span>
+          </div>
+        </div>
+        <div class="comp-step comp-step-final">
+          <span class="comp-num comp-num-final">4</span>
+          <div class="comp-info">
+            <span class="comp-name">State</span>
+            <span class="comp-desc">UIL State Academic Championships in Austin.</span>
+          </div>
         </div>
       </div>
 
-      <a href="https://www.uiltexas.org/alignments/category/align-academics"
-         target="_blank" rel="noopener" class="btn btn-outline" style="margin-top:0.5vw;flex-shrink:0">
-        Full Alignment List &#8599;</a>
+      <div class="info-divider"></div>
+
+      <p class="conf-links-label">District alignments by conference</p>
+      <div class="conf-links">
+        <a href="https://github.com/TanishC4444/UILprepApp/blob/main/alignments/json/1AACA_Rvsd6-15.json" target="_blank" rel="noopener" class="conf-link">1A</a>
+        <a href="https://github.com/TanishC4444/UILprepApp/blob/main/alignments/json/262AACA.json"        target="_blank" rel="noopener" class="conf-link">2A</a>
+        <a href="https://github.com/TanishC4444/UILprepApp/blob/main/alignments/json/264AACA.json"        target="_blank" rel="noopener" class="conf-link">3A</a>
+        <a href="https://github.com/TanishC4444/UILprepApp/blob/main/alignments/json/266AACA.json"        target="_blank" rel="noopener" class="conf-link">4A</a>
+        <a href="https://github.com/TanishC4444/UILprepApp/blob/main/alignments/json/3AACA_Rvsd4-15.json" target="_blank" rel="noopener" class="conf-link">5A</a>
+        <a href="https://github.com/TanishC4444/UILprepApp/blob/main/alignments/json/5AACA_Rvsd6-15.json" target="_blank" rel="noopener" class="conf-link">6A</a>
+      </div>
     </div>
 
     <!-- EVENTS AT A GLANCE ───────────────────────────────────── -->
@@ -228,84 +286,6 @@
 
   </div>
 
-<!-- schools.js is generated by alignment.py → parse_all()
-     It assigns window.UIL_SCHOOLS = [{name,conference,region,district}, ...]
-     Loading it as a plain script tag means it works on file://, GitHub Pages,
-     or any static host — no fetch(), no server, no CORS issues. -->
-<script src="alignments/json/schools.js" onerror="schoolsLoadFailed()"></script>
-<script>
-function schoolsLoadFailed() {
-  document.getElementById('lookupStatus').textContent =
-    'School data not found — run alignment.py first to generate schools.js.';
-}
-
-(function () {
-  const selEl      = document.getElementById('schoolSelect');
-  const statusEl   = document.getElementById('lookupStatus');
-  const resultCard = document.getElementById('lookupResult');
-  const resultName = document.getElementById('lresultName');
-  const resultBadge= document.getElementById('lresultBadges');
-  const statSchools= document.getElementById('statSchools');
-
-  if (!window.UIL_SCHOOLS || !window.UIL_SCHOOLS.length) {
-    // schools.js loaded but was empty, or onerror fired before this ran
-    statusEl.textContent =
-      'School data not found — run alignment.py first to generate schools.js.';
-    return;
-  }
-
-  const schools = window.UIL_SCHOOLS;
-
-  // Build <select> grouped by conference → region → district
-  // Group into a nested map first
-  const tree = {}; // conf → region → district → [entries]
-  for (const s of schools) {
-    const c = s.conference, r = s.region, d = s.district;
-    if (!tree[c])       tree[c]       = {};
-    if (!tree[c][r])    tree[c][r]    = {};
-    if (!tree[c][r][d]) tree[c][r][d] = [];
-    tree[c][r][d].push(s);
-  }
-
-  selEl.innerHTML = '<option value="">— Select your school —</option>';
-
-  for (const conf of Object.keys(tree).sort()) {
-    for (const reg of Object.keys(tree[conf]).map(Number).sort((a,b)=>a-b)) {
-      for (const dist of Object.keys(tree[conf][reg]).map(Number).sort((a,b)=>a-b)) {
-        const entries = tree[conf][reg][dist];
-        const og = document.createElement('optgroup');
-        og.label = `${conf} · Region ${reg} · District ${dist}`;
-        for (const s of entries) {
-          const opt = document.createElement('option');
-          // value encodes all three fields so we can look up on change
-          opt.value = `${conf}|${reg}|${dist}|${s.name}`;
-          opt.textContent = s.name;
-          og.appendChild(opt);
-        }
-        selEl.appendChild(og);
-      }
-    }
-  }
-
-  selEl.disabled = false;
-  const total = schools.length;
-  statusEl.textContent = `${total.toLocaleString()} schools across 6 conferences.`;
-  statSchools.textContent = total.toLocaleString();
-
-  selEl.addEventListener('change', () => {
-    const val = selEl.value;
-    if (!val) { resultCard.classList.remove('visible'); return; }
-    const [conf, region, district, ...nameParts] = val.split('|');
-    const name = nameParts.join('|'); // handles any | in school names
-    resultName.textContent = name;
-    resultBadge.innerHTML  =
-      `<span class="lresult-badge lbadge-conf">${conf}</span>` +
-      `<span class="lresult-badge lbadge-region">Region ${region}</span>` +
-      `<span class="lresult-badge lbadge-district">District ${district}</span>`;
-    resultCard.classList.add('visible');
-  });
-})();
-</script>
 
 </body>
 </html>
