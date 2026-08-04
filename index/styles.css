@@ -13,8 +13,34 @@
   --ink:       #14161c;
   --ink-dim:   rgba(20, 22, 28, 0.64);
   --line:      rgba(20, 22, 28, 0.10);
+  --paper:     #faf8f2;
   --ease:      cubic-bezier(0.16, 1, 0.3, 1);
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+}
+
+/* ── Brand mark — three answer bubbles, the site's recurring motif ──── */
+.brand-mark { display: inline-flex; align-items: center; gap: 3px; flex-shrink: 0; }
+.brand-mark .bm-dot { width: 9px; height: 9px; border-radius: 50%; border: 1.5px solid currentColor; }
+.brand-mark .bm-dot:nth-child(1) { background: var(--blue); border-color: var(--blue); }
+.brand-mark .bm-dot:nth-child(2) { background: transparent; color: var(--line); }
+.brand-mark .bm-dot:nth-child(3) { background: var(--red); border-color: var(--red); }
+
+/* ── Scantron bubble motif — reused as bullets / status marks ───────── */
+.bubble {
+  width: 7px; height: 7px; border-radius: 50%;
+  border: 1.5px solid var(--ink-dim);
+  display: inline-block; flex-shrink: 0;
+  opacity: 0.5;
+}
+.bubble.bubble-filled { background: var(--blue); border-color: var(--blue); opacity: 1; }
+.bubble.bubble-filled-red { background: var(--red); border-color: var(--red); opacity: 1; }
+
+/* ── Mono utility — for data, labels, counters, scores ───────────────── */
+.mono { font-family: var(--font-mono); font-feature-settings: "tnum"; }
 
 * {
   margin: 0;
@@ -124,7 +150,7 @@ html, body {
 
 /* tag / eyebrow label */
 .tile-tag {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-mono);
   font-size: 0.72vw;
   font-weight: 600;
   letter-spacing: 0.14em;
@@ -170,6 +196,7 @@ html, body {
 }
 
 .chip {
+  font-family: var(--font-mono);
   font-size: 0.68vw;
   font-weight: 600;
   padding: 0.3vw 0.8vw;
@@ -266,24 +293,45 @@ html, body {
 .page-header {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  gap: 1rem;
   position: relative;
-  height: 8vh;
+  min-height: 8vh;
   padding: 0 2vw;
+  border-bottom: 1px solid var(--line);
+  background:
+    linear-gradient(rgba(20,22,28,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20,22,28,0.025) 1px, transparent 1px);
+  background-size: 22px 22px;
 }
 
+.page-header-id {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.page-crumb {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--ink-dim);
+  white-space: nowrap;
+}
+.page-crumb b { color: var(--ink); font-weight: 700; }
+
 .back-link {
-  position: absolute;
-  left: 2vw;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.85vw;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
   font-weight: 600;
   color: var(--ink);
   text-decoration: none;
-  padding: 0.4vw 0.9vw;
+  padding: 0.42vw 0.9vw;
   border: 1.5px solid var(--line);
   border-radius: 999px;
   transition: border-color 0.25s ease, color 0.25s ease, background 0.25s ease;
+  flex-shrink: 0;
 }
 
 .back-link:hover {
@@ -297,12 +345,11 @@ html, body {
   font-weight: 800;
   font-size: clamp(1.1rem, 1.8vw, 1.6rem);
   letter-spacing: -0.01em;
+  text-align: right;
 }
 
 .page-header-spacer {
-  position: absolute;
-  right: 2vw;
-  width: 1px;
+  display: none;
 }
 
 .info-grid {

@@ -226,13 +226,13 @@
       <div class="info-divider"></div>
 
       <p class="conf-links-label">District alignments by conference</p>
-      <div class="conf-links">
-        <a href="https://github.com/TanishC4444/UILprepApp/blob/main/alignments/json/1AACA_Rvsd6-15.json" target="_blank" rel="noopener" class="conf-link">1A</a>
-        <a href="https://github.com/TanishC4444/UILprepApp/blob/main/alignments/json/262AACA.json"        target="_blank" rel="noopener" class="conf-link">2A</a>
-        <a href="https://github.com/TanishC4444/UILprepApp/blob/main/alignments/json/264AACA.json"        target="_blank" rel="noopener" class="conf-link">3A</a>
-        <a href="https://github.com/TanishC4444/UILprepApp/blob/main/alignments/json/266AACA.json"        target="_blank" rel="noopener" class="conf-link">4A</a>
-        <a href="https://github.com/TanishC4444/UILprepApp/blob/main/alignments/json/3AACA_Rvsd4-15.json" target="_blank" rel="noopener" class="conf-link">5A</a>
-        <a href="https://github.com/TanishC4444/UILprepApp/blob/main/alignments/json/5AACA_Rvsd6-15.json" target="_blank" rel="noopener" class="conf-link">6A</a>
+      <div class="conf-links" id="confLinks">
+        <a href="https://www.uiltexas.org/alignments/category/align-academics" target="_blank" rel="noopener" class="conf-link" data-conf="1A">1A</a>
+        <a href="https://www.uiltexas.org/alignments/category/align-academics" target="_blank" rel="noopener" class="conf-link" data-conf="2A">2A</a>
+        <a href="https://www.uiltexas.org/alignments/category/align-academics" target="_blank" rel="noopener" class="conf-link" data-conf="3A">3A</a>
+        <a href="https://www.uiltexas.org/alignments/category/align-academics" target="_blank" rel="noopener" class="conf-link" data-conf="4A">4A</a>
+        <a href="https://www.uiltexas.org/alignments/category/align-academics" target="_blank" rel="noopener" class="conf-link" data-conf="5A">5A</a>
+        <a href="https://www.uiltexas.org/alignments/category/align-academics" target="_blank" rel="noopener" class="conf-link" data-conf="6A">6A</a>
       </div>
     </div>
 
@@ -286,6 +286,20 @@
 
   </div>
 
+  <!-- Loads window.UIL_ALIGNMENT_LINKS = { "1A": "https://...pdf", ... }, written by
+       alignment.py. If the file is missing (script hasn't been run yet, or is being
+       served from somewhere that doesn't have it), the conference buttons above just
+       keep pointing at the UIL alignments page as a safe fallback. -->
+  <script src="alignments/links.js" onerror="console.warn('alignments/links.js not found — run alignment.py to generate it.')"></script>
+  <script>
+    (function () {
+      var links = window.UIL_ALIGNMENT_LINKS || {};
+      document.querySelectorAll('#confLinks .conf-link[data-conf]').forEach(function (a) {
+        var url = links[a.dataset.conf];
+        if (url) a.href = url;
+      });
+    })();
+  </script>
 
 </body>
 </html>

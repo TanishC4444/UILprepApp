@@ -6,7 +6,7 @@
 <title>UIL Prep — Event Assessment</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <style>
 /* ── Reset for this page ────────────────────────────────────────────── */
@@ -60,7 +60,7 @@ html, body { height: 100%; overflow: hidden; background: #f4f5f9; }
 .sb-back:hover { color: #fff; border-color: rgba(255,255,255,0.4); background: rgba(255,255,255,0.06); }
 
 .sb-eyebrow {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-mono);
   font-size: 0.58rem;
   font-weight: 700;
   letter-spacing: 0.16em;
@@ -180,7 +180,7 @@ html, body { height: 100%; overflow: hidden; background: #f4f5f9; }
 }
 
 .assess-step-label {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-mono);
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -189,7 +189,7 @@ html, body { height: 100%; overflow: hidden; background: #f4f5f9; }
 }
 
 .assess-step-count {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-mono);
   font-size: 0.7rem;
   font-weight: 600;
   color: var(--ink-dim);
@@ -223,7 +223,7 @@ html, body { height: 100%; overflow: hidden; background: #f4f5f9; }
 }
 
 .q-label {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-mono);
   font-size: 0.62rem;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -325,6 +325,7 @@ html, body { height: 100%; overflow: hidden; background: #f4f5f9; }
 
 /* Multi-select hint */
 .multi-hint {
+  font-family: var(--font-mono);
   font-size: 0.66rem;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -437,7 +438,7 @@ html, body { height: 100%; overflow: hidden; background: #f4f5f9; }
 .r-bar-wrap { display: flex; flex-direction: column; gap: 3px; align-items: flex-end; }
 .r-bar-bg { width: 72px; height: 4px; background: rgba(20,22,28,0.08); border-radius: 999px; overflow: hidden; }
 .r-bar-fill { height: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--blue), var(--red)); }
-.r-score { font-size: 0.6rem; font-weight: 700; color: var(--ink-dim); letter-spacing: 0.04em; }
+.r-score { font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; color: var(--ink-dim); letter-spacing: 0.04em; }
 
 .btn-retake {
   font-family: 'Inter', sans-serif;
@@ -501,6 +502,8 @@ html, body { height: 100%; overflow: hidden; background: #f4f5f9; }
 
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script>
 // ═══════════════════════════════════════════════════════════════════════════
 // DATA
@@ -698,9 +701,18 @@ function buildContent() {
 // INTERACTION
 // ═══════════════════════════════════════════════════════════════════════════
 
+// Tactile pop feedback on selection — a small, consistent tell that an
+// answer has been "bubbled in", using anime.js if it loaded.
+function popIt(el) {
+  if (window.anime) {
+    anime({ targets: el, scale: [0.96, 1], duration: 260, easing: 'easeOutBack' });
+  }
+}
+
 function pickGrade(g, btn) {
   document.querySelectorAll('.grade-pill').forEach(b => b.classList.remove('g-selected'));
   btn.classList.add('g-selected');
+  popIt(btn);
   ans.grade = g;
   refreshNav();
 }
@@ -708,6 +720,7 @@ function pickGrade(g, btn) {
 function pickSingle(el, qId, val) {
   document.querySelectorAll(`[data-q="${qId}"]`).forEach(c => c.classList.remove('o-selected'));
   el.classList.add('o-selected');
+  popIt(el);
   ans[qId] = val;
   refreshNav();
   // Auto-advance on single-select after brief pause
@@ -721,6 +734,7 @@ function toggleMulti(el, qId, val) {
     ans[qId] = ans[qId].filter(v => v !== val);
   } else {
     el.classList.add('o-selected');
+    popIt(el);
     ans[qId].push(val);
   }
   refreshNav();
@@ -881,6 +895,18 @@ function showResults() {
   ).join('');
 
   document.getElementById('resultsBlock').classList.add('r-active');
+
+  // Grow each match bar from zero — the payoff moment for the whole flow.
+  const bars = document.querySelectorAll('.r-bar-fill');
+  const targets = top.map(ev => Math.round(ev.pts/maxPts*100));
+  bars.forEach(b => b.style.width = '0%');
+  if (window.gsap) {
+    bars.forEach((b, i) => {
+      gsap.to(b, { width: targets[i] + '%', duration: 0.7, ease: 'power3.out', delay: 0.35 + i * 0.08 });
+    });
+  } else {
+    bars.forEach((b, i) => b.style.width = targets[i] + '%');
+  }
 
   QS.forEach((_,i) => {
     const el = document.getElementById(`sbStep${i}`);

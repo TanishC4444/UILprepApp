@@ -6,8 +6,64 @@
 <title>UIL Prep</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<style>
+/* ── hero bubble-sheet field ─────────────────────────────────────────
+   The center tile carries the site's thesis: this is a world of
+   standardized answer sheets. A field of scantron bubbles fills in,
+   once, on load — quiet, not looping, not decorative noise. */
+.tile-center { overflow: hidden; }
+
+.bubble-field {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  gap: clamp(6px, 1.1vw, 14px);
+  padding: clamp(14px, 2.4vw, 30px);
+  z-index: 0;
+  pointer-events: none;
+}
+.bf-dot {
+  width: clamp(4px, 0.5vw, 7px);
+  height: clamp(4px, 0.5vw, 7px);
+  border-radius: 50%;
+  border: 1.3px solid rgba(20,22,28,0.10);
+  justify-self: center;
+  align-self: center;
+  transform: scale(0);
+  opacity: 0;
+}
+.bf-dot.is-blue { background: var(--blue); border-color: var(--blue); }
+.bf-dot.is-red  { background: var(--red);  border-color: var(--red); }
+
+.tile-center .tile-content { position: relative; z-index: 1; }
+
+.brand-mark-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.9vw;
+}
+.brand-mark-row .brand-mark .bm-dot { width: 8px; height: 8px; }
+.brand-eyebrow {
+  font-family: var(--font-mono);
+  font-size: clamp(0.58rem, 0.68vw, 0.68rem);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+
+.brand-title { display: flex; }
+.brand-title .char { display: inline-block; will-change: transform, opacity; }
+
+/* keep logo out of the way unless the file actually exists */
+.brand-logo { display: none; }
+.brand-logo.has-logo { display: block; }
+</style>
 </head>
 <body>
 
@@ -28,9 +84,14 @@
     </a>
 
     <div class="tile tile-center tile-anim" style="--delay: 0.12s">
+      <div class="bubble-field" id="bubbleField"></div>
       <div class="tile-content">
-        <img src="logo.png" alt="UIL" class="brand-logo">
-        <h1 class="brand-title">UIL PREP</h1>
+        <img src="logo.png" alt="UIL" class="brand-logo" id="brandLogo">
+        <div class="brand-mark-row">
+          <span class="brand-mark" aria-hidden="true"><span class="bm-dot"></span><span class="bm-dot"></span><span class="bm-dot"></span></span>
+          <span class="brand-eyebrow">Academic Meet Program</span>
+        </div>
+        <h1 class="brand-title" id="brandTitle">UIL PREP</h1>
         <p class="brand-org">University Interscholastic League &middot; Academic Preparation</p>
         <div class="brand-divider"></div>
         <p class="brand-desc">Resources for every UIL academic competitor — Elementary through Varsity, A+ through 6A.</p>
@@ -52,6 +113,66 @@
     </a>
 
   </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script>
+// Hide the logo <img> gracefully if logo.png isn't present (keeps the mark as fallback).
+(function(){
+  const img = document.getElementById('brandLogo');
+  img.addEventListener('load', () => img.classList.add('has-logo'));
+  img.addEventListener('error', () => img.remove());
+})();
+
+// Build the answer-sheet bubble field: 12x9 grid, a handful pre-selected
+// to "fill" — evokes a graded scantron without spelling anything literal.
+(function(){
+  const field = document.getElementById('bubbleField');
+  const COLS = 12, ROWS = 9, TOTAL = COLS * ROWS;
+  const filledCount = Math.round(TOTAL * 0.09);
+  const filledIdx = new Set();
+  while (filledIdx.size < filledCount) filledIdx.add(Math.floor(Math.random() * TOTAL));
+
+  const frag = document.createDocumentFragment();
+  const dots = [];
+  for (let i = 0; i < TOTAL; i++) {
+    const d = document.createElement('span');
+    d.className = 'bf-dot';
+    if (filledIdx.has(i)) d.classList.add(Math.random() > 0.5 ? 'is-blue' : 'is-red');
+    frag.appendChild(d);
+    dots.push(d);
+  }
+  field.appendChild(frag);
+
+  if (window.gsap) {
+    gsap.to(dots, {
+      opacity: (i, el) => el.classList.contains('is-blue') || el.classList.contains('is-red') ? 1 : 0.55,
+      scale: 1,
+      duration: 0.5,
+      ease: 'back.out(2)',
+      stagger: { each: 0.006, from: 'random' },
+      delay: 0.3
+    });
+  } else {
+    dots.forEach(d => { d.style.opacity = 1; d.style.transform = 'scale(1)'; });
+  }
+})();
+
+// Letter-by-letter reveal of the brand title — the single hero flourish.
+(function(){
+  const el = document.getElementById('brandTitle');
+  const text = el.textContent;
+  el.innerHTML = [...text].map(ch =>
+    `<span class="char">${ch === ' ' ? '&nbsp;' : ch}</span>`
+  ).join('');
+  const chars = el.querySelectorAll('.char');
+  if (window.gsap) {
+    gsap.fromTo(chars, { y: '0.6em', opacity: 0 }, {
+      y: 0, opacity: 1, duration: 0.55, ease: 'power3.out',
+      stagger: 0.035, delay: 0.5
+    });
+  }
+})();
+</script>
 
 </body>
 </html>
