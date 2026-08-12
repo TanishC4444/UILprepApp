@@ -1,178 +1,73 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UIL Prep</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-<style>
-/* ── hero bubble-sheet field ─────────────────────────────────────────
-   The center tile carries the site's thesis: this is a world of
-   standardized answer sheets. A field of scantron bubbles fills in,
-   once, on load — quiet, not looping, not decorative noise. */
-.tile-center { overflow: hidden; }
-
-.bubble-field {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(9, 1fr);
-  gap: clamp(6px, 1.1vw, 14px);
-  padding: clamp(14px, 2.4vw, 30px);
-  z-index: 0;
-  pointer-events: none;
-}
-.bf-dot {
-  width: clamp(4px, 0.5vw, 7px);
-  height: clamp(4px, 0.5vw, 7px);
-  border-radius: 50%;
-  border: 1.3px solid rgba(20,22,28,0.10);
-  justify-self: center;
-  align-self: center;
-  transform: scale(0);
-  opacity: 0;
-}
-.bf-dot.is-blue { background: var(--blue); border-color: var(--blue); }
-.bf-dot.is-red  { background: var(--red);  border-color: var(--red); }
-
-.tile-center .tile-content { position: relative; z-index: 1; }
-
-.brand-mark-row {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  margin-bottom: 0.9vw;
-}
-.brand-mark-row .brand-mark .bm-dot { width: 8px; height: 8px; }
-.brand-eyebrow {
-  font-family: var(--font-mono);
-  font-size: clamp(0.58rem, 0.68vw, 0.68rem);
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--ink-dim);
-}
-
-.brand-title { display: flex; }
-.brand-title .char { display: inline-block; will-change: transform, opacity; }
-
-/* keep logo out of the way unless the file actually exists */
-.brand-logo { display: none; }
-.brand-logo.has-logo { display: block; }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="UIL Prep helps Texas students understand academic competition, explore events, and find a strong event match.">
+  <title>UIL Prep — Find Your Academic Event</title>
+  <link rel="icon" type="image/jpeg" href="UIL-logo.jpg">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="update-ribbon"><span class="live-dot" aria-hidden="true"></span><span>Latest UIL updates</span><a href="https://www.uiltexas.org/policy/latest-updates" target="_blank" rel="noopener">View official updates ↗</a></div>
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="wordmark" href="main.html" aria-label="UIL Prep home">
+        <span class="brand-image-wrap"><img class="brand-image" src="UIL-logo.jpg" alt="University Interscholastic League logo"></span>
+        <span class="prep-lockup">Prep<small>Academic meet guide</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Open navigation" data-nav-toggle><span></span></button>
+      <nav class="site-nav" id="site-navigation" aria-label="Primary navigation" data-site-nav>
+        <a href="main.html" aria-current="page">Home</a><a href="info.html">Get started</a><a href="event.html">Events</a><a class="nav-cta" href="survey.html">Find your event</a>
+      </nav>
+    </div>
+  </header>
 
-  <div class="tile-grid">
-
-    <a href="info.html" class="tile tile-left tile-anim" style="--delay: 0s">
-      <span class="tile-edge"></span>
-      <div class="tile-content">
-        <span class="tile-tag">Step 1</span>
-        <h2 class="tile-title">Get Started</h2>
-        <p class="tile-desc">New to UIL competition? Learn how events work, find your school's conference and district, and figure out where you fit.</p>
-        <div class="tile-chips">
-          <span class="chip">A+</span>
-          <span class="chip">Jr. High</span>
-          <span class="chip">Varsity</span>
+  <main id="main-content">
+    <section class="hero-editorial" aria-labelledby="hero-title" data-hero>
+      <span class="hero-red-rail" aria-hidden="true"></span>
+      <div class="container hero-editorial-grid">
+        <div class="hero-editorial-copy">
+          <span class="meet-code">Academic competition · Texas</span>
+          <h1 id="hero-title">Find your edge. <em>Own the meet.</em></h1>
+          <p class="lede">A sharper way to understand UIL academics, compare contests, and identify where your skills can become a competitive advantage.</p>
+          <div class="button-row"><a class="button button-red" href="survey.html">Match me to an event →</a><a class="button button-light" href="event.html">View the event board</a></div>
         </div>
+        <aside class="hero-meet-board" aria-label="UIL Prep meet card" data-meet-board>
+          <div class="board-head"><span>Meet card · 2026–27</span><span>UIL / Academic</span></div>
+          <div class="board-logo"><div class="board-logo-card"><img src="UIL-logo.jpg" alt="UIL logo"></div></div>
+          <div class="board-grid"><div class="board-stat"><strong>10</strong><span>Junior events</span></div><div class="board-stat"><strong>2–9</strong><span>Grade range</span></div></div>
+        </aside>
       </div>
-    </a>
+    </section>
 
-    <div class="tile tile-center tile-anim" style="--delay: 0.12s">
-      <div class="bubble-field" id="bubbleField"></div>
-      <div class="tile-content">
-        <img src="logo.png" alt="UIL" class="brand-logo" id="brandLogo">
-        <div class="brand-mark-row">
-          <span class="brand-mark" aria-hidden="true"><span class="bm-dot"></span><span class="bm-dot"></span><span class="bm-dot"></span></span>
-          <span class="brand-eyebrow">Academic Meet Program</span>
-        </div>
-        <h1 class="brand-title" id="brandTitle">UIL PREP</h1>
-        <p class="brand-org">University Interscholastic League &middot; Academic Preparation</p>
-        <div class="brand-divider"></div>
-        <p class="brand-desc">Resources for every UIL academic competitor — Elementary through Varsity, A+ through 6A.</p>
-      </div>
+    <div class="news-ticker" aria-label="Academic event ticker">
+      <div class="ticker-track"><span>Number Sense</span><span>Science</span><span>Modern Oratory</span><span>Chess Puzzles</span><span>Oral Reading</span><span>Spelling &amp; Vocabulary</span><span aria-hidden="true">Number Sense</span><span aria-hidden="true">Science</span><span aria-hidden="true">Modern Oratory</span><span aria-hidden="true">Chess Puzzles</span><span aria-hidden="true">Oral Reading</span><span aria-hidden="true">Spelling &amp; Vocabulary</span></div>
     </div>
 
-    <a href="event.html" class="tile tile-right tile-anim" style="--delay: 0.24s">
-      <span class="tile-edge"></span>
-      <div class="tile-content">
-        <span class="tile-tag">Step 2</span>
-        <h2 class="tile-title">Events</h2>
-        <p class="tile-desc">Browse the full catalog of UIL Academic contests — Spelling, Ready Writing, Number Sense, Science, Current Events, and more.</p>
-        <div class="tile-chips">
-          <span class="chip">Spelling</span>
-          <span class="chip">Science</span>
-          <span class="chip">+ more</span>
+    <nav class="quick-route" aria-label="Quick start">
+      <div class="quick-route-title"><strong>Choose your route</strong><span>Start where you are right now.</span></div>
+      <a class="route-item" href="info.html"><span class="route-index">01</span><span><strong>I’m new to UIL</strong><span>Learn structure and advancement.</span></span></a>
+      <a class="route-item" href="event.html"><span class="route-index">02</span><span><strong>I want to compare</strong><span>Filter events by grade and format.</span></span></a>
+      <a class="route-item" href="survey.html"><span class="route-index">03</span><span><strong>I want a match</strong><span>Get a ranked recommendation.</span></span></a>
+    </nav>
+
+    <section class="editorial-section" aria-labelledby="built-title">
+      <div class="container">
+        <div class="editorial-heading reveal"><span class="editorial-number" aria-hidden="true">01</span><div><span class="eyebrow">Built for the first decision</span><h2 id="built-title">Stop browsing. Start narrowing.</h2><p>UIL Prep turns a broad catalog into an actionable short list. Begin with how the league works, inspect the contest formats, or jump directly into a two-minute fit assessment.</p></div></div>
+        <div class="event-feature-row reveal">
+          <a class="event-feature primary" href="survey.html"><span class="feature-code">FIT</span><span class="eyebrow light">Personalized</span><h3>Find the event that fits how you think.</h3><p>Seven questions. Eligible events only. Ranked reasoning included.</p></a>
+          <a class="event-feature red" href="info.html"><span class="feature-code">GO</span><span class="eyebrow light">Game plan</span><h3>Understand the road to state.</h3><p>Invitationals, district, region, and the state championship.</p></a>
+          <a class="event-feature" href="event.html"><span class="feature-code">10</span><span class="eyebrow">Event board</span><h3>Compare the full junior catalog.</h3><p>Grades, timing, format, and the skills each contest rewards.</p></a>
         </div>
       </div>
-    </a>
+    </section>
 
-  </div>
+    <section class="quote-band"><div class="container reveal"><blockquote>“The goal is not to look busy. It’s to know what to practice next.”</blockquote><cite>UIL Prep · A focused academic competition guide</cite></div></section>
+  </main>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script>
-// Hide the logo <img> gracefully if logo.png isn't present (keeps the mark as fallback).
-(function(){
-  const img = document.getElementById('brandLogo');
-  img.addEventListener('load', () => img.classList.add('has-logo'));
-  img.addEventListener('error', () => img.remove());
-})();
-
-// Build the answer-sheet bubble field: 12x9 grid, a handful pre-selected
-// to "fill" — evokes a graded scantron without spelling anything literal.
-(function(){
-  const field = document.getElementById('bubbleField');
-  const COLS = 12, ROWS = 9, TOTAL = COLS * ROWS;
-  const filledCount = Math.round(TOTAL * 0.09);
-  const filledIdx = new Set();
-  while (filledIdx.size < filledCount) filledIdx.add(Math.floor(Math.random() * TOTAL));
-
-  const frag = document.createDocumentFragment();
-  const dots = [];
-  for (let i = 0; i < TOTAL; i++) {
-    const d = document.createElement('span');
-    d.className = 'bf-dot';
-    if (filledIdx.has(i)) d.classList.add(Math.random() > 0.5 ? 'is-blue' : 'is-red');
-    frag.appendChild(d);
-    dots.push(d);
-  }
-  field.appendChild(frag);
-
-  if (window.gsap) {
-    gsap.to(dots, {
-      opacity: (i, el) => el.classList.contains('is-blue') || el.classList.contains('is-red') ? 1 : 0.55,
-      scale: 1,
-      duration: 0.5,
-      ease: 'back.out(2)',
-      stagger: { each: 0.006, from: 'random' },
-      delay: 0.3
-    });
-  } else {
-    dots.forEach(d => { d.style.opacity = 1; d.style.transform = 'scale(1)'; });
-  }
-})();
-
-// Letter-by-letter reveal of the brand title — the single hero flourish.
-(function(){
-  const el = document.getElementById('brandTitle');
-  const text = el.textContent;
-  el.innerHTML = [...text].map(ch =>
-    `<span class="char">${ch === ' ' ? '&nbsp;' : ch}</span>`
-  ).join('');
-  const chars = el.querySelectorAll('.char');
-  if (window.gsap) {
-    gsap.fromTo(chars, { y: '0.6em', opacity: 0 }, {
-      y: 0, opacity: 1, duration: 0.55, ease: 'power3.out',
-      stagger: 0.035, delay: 0.5
-    });
-  }
-})();
-</script>
-
+  <footer class="site-footer"><div class="container footer-grid"><div><a class="footer-brand" href="main.html"><span class="brand-image-wrap"><img class="brand-image" src="UIL-logo.jpg" alt="University Interscholastic League logo"></span><span>UIL Prep</span></a><p>An independent preparation resource. Confirm eligibility, rules, dates, and contest details with your coach and the official UIL website.</p></div><nav class="footer-links" aria-label="Footer navigation"><a href="info.html">Get started</a><a href="event.html">Events</a><a href="survey.html">Assessment</a><a href="https://www.uiltexas.org/" target="_blank" rel="noopener">Official UIL site ↗</a></nav></div></footer>
 </body>
 </html>
